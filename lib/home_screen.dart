@@ -23,33 +23,73 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      children: [
-        SizedBox(
-          height: 50,
-        ),
-        appBar(),
-        dailyRosary(),
-        SizedBox(
-          height: 50,
-        ),
-        Mystery(
-          title: 'Joyful Mystery',
-          day: '(Monday and Saturday)',
-        ),
-        // Mystery(
-        //   title: 'Glorious Mystery',
-        //   day: '(Sunday)',
-        // ),
-        // Mystery(
-        //   title: 'Sorrowful Mystery',
-        //   day: '(Tuesday and Friday)',
-        // ),
-        // Mystery(
-        //   title: 'Luminous Mystery',
-        //   day: '(Thursday)',
-        // ),
-      ],
+        body: SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            height: 50,
+          ),
+          appBar(),
+          dailyRosary(),
+          SizedBox(
+            height: 50,
+          ),
+          Mystery(),
+          SizedBox(
+            height: 50,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20),
+            child: Text(
+              "More Prayers:",
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 23,
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w600,
+                height: 0,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20, top: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                prayer(title: 'Litany of our blessed virgin mary'),
+                divider(),
+                prayer(title: 'Prayer to saint Joseph'),
+                divider(),
+                prayer(title: 'Prayer to saint Micheal the arch angel'),
+                divider(),
+                prayer(title: 'Prayer for purity')
+              ],
+            ),
+          )
+        ],
+      ),
     ));
+  }
+}
+
+class prayer extends StatelessWidget {
+  final String title;
+
+  const prayer({super.key, required this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      "$title",
+      style: TextStyle(
+        color: Colors.black,
+        fontSize: 20,
+        fontFamily: 'Inter',
+        fontWeight: FontWeight.w400,
+        height: 0,
+      ),
+    );
   }
 }

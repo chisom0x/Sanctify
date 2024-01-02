@@ -1,18 +1,12 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:rosary_app/glorious_mystery.dart';
 import 'package:rosary_app/joyful_mystery.dart';
+import 'package:rosary_app/luminous_mystery.dart';
+import 'package:rosary_app/sorrowful_mystery.dart';
 
 class Mystery extends StatelessWidget {
-  final String title;
-  final String day;
-
-  const Mystery({
-    Key? key,
-    required this.title,
-    required this.day,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -25,13 +19,20 @@ class Mystery extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(right: 8),
                   child: MysteryBox(
-                      title: 'Joyful\nMystery', day: 'Monday & Saturday'),
+                    title: 'Joyful\nMystery',
+                    day: 'Monday & Saturday',
+                    destination: Joyful(),
+                  ),
                 ),
               ),
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.only(left: 8),
-                  child: MysteryBox(title: 'Glorious\nMystery', day: 'Sunday'),
+                  child: MysteryBox(
+                    title: 'Glorious\nMystery',
+                    day: 'Sunday',
+                    destination: Glorious(),
+                  ),
                 ),
               ),
             ],
@@ -45,13 +46,20 @@ class Mystery extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(right: 8),
                   child: MysteryBox(
-                      title: 'Luminous\nMystery', day: 'Monday & Saturday'),
+                    title: 'Luminous\nMystery',
+                    day: 'Monday & Saturday',
+                    destination: Luminous(),
+                  ),
                 ),
               ),
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.only(left: 8),
-                  child: MysteryBox(title: 'Sorrowful\nMystery', day: 'Sunday'),
+                  child: MysteryBox(
+                    title: 'Sorrowful\nMystery',
+                    day: 'Sunday',
+                    destination: Sorrowful(),
+                  ),
                 ),
               ),
             ],
@@ -65,10 +73,13 @@ class Mystery extends StatelessWidget {
 class MysteryBox extends StatelessWidget {
   final String title;
   final String day;
+  final Widget destination;
+
   const MysteryBox({
     Key? key,
     required this.title,
     required this.day,
+    required this.destination,
   }) : super(key: key);
 
   @override
@@ -77,7 +88,7 @@ class MysteryBox extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const Joyful()),
+          MaterialPageRoute(builder: (context) => destination),
         );
       },
       child: Container(
