@@ -41,34 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
           SizedBox(
             height: 50,
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20),
-            child: Text(
-              "More Prayers:",
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 23,
-                fontFamily: 'Inter',
-                fontWeight: FontWeight.w600,
-                height: 0,
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20, top: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                prayer(title: 'Litany of our blessed virgin mary'),
-                divider(),
-                // prayer(title: 'Prayer to saint Joseph'),
-                // divider(),
-                // prayer(title: 'Prayer to saint Micheal the arch angel'),
-                // divider(),
-                // prayer(title: 'Prayer for purity')
-              ],
-            ),
-          )
+          prayer(title: 'Litany Of The Blessed Virgin Mary')
         ],
       ),
     ));
@@ -89,14 +62,31 @@ class prayer extends StatelessWidget {
           MaterialPageRoute(builder: (context) => Litany()),
         );
       },
-      child: Text(
-        "$title",
-        style: TextStyle(
-          color: Colors.black,
-          fontSize: 20,
-          fontFamily: 'Inter',
-          fontWeight: FontWeight.w400,
-          height: 0,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Container(
+          width: double.infinity,
+          height: 45,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.deepPurpleAccent, // Set the border color
+              width: 2.0, // Set the border width
+            ),
+            borderRadius: BorderRadius.circular(10.0), // Set the border radius
+          ),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 6.5),
+            child: Text(
+              "$title",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 20,
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w400,
+                height: 0,
+              ),
+            ),
+          ),
         ),
       ),
     );

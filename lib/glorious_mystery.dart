@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:rosary_app/custom_widgets.dart';
+import 'package:rosary_app/joyful_mystery.dart';
 
 class Glorious extends StatelessWidget {
   @override
@@ -21,61 +22,47 @@ class Glorious extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Expanded(
-                  child: Column(
-                    children: [
-                      startrosary(),
-                      divider(),
-                      decades(
-                          'First', 'Glorious', 'The Resurrection of Jesus.'),
-                      decades('Second', 'Glorious',
-                          'The Ascension of Jesus into Heaven'),
-                      decades('Third', 'Glorious',
-                          'The Descent of the Holy Spirit at Pentecost.'),
-                      decades('Fourth', 'Glorious',
-                          'The Assumption of Mary into Heaven'),
-                      decades('Fifth', 'Glorious',
-                          'The Coronation of Our Lady in Heaven.'),
-                      hailholyqueen(),
-                      divider(),
-                      Text(
-                        'Pray for us, O holy Mother of God.That we may be made worthy of the promises of Christ',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 23,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w400,
-                          height: 0,
-                        ),
+                child: Column(
+                  children: [
+                    startrosary(),
+                    divider(),
+                    decades('First', 'Glorious', 'The Resurrection of Jesus.'),
+                    decades('Second', 'Glorious',
+                        'The Ascension of Jesus into Heaven'),
+                    decades('Third', 'Glorious',
+                        'The Descent of the Holy Spirit at Pentecost.'),
+                    decades('Fourth', 'Glorious',
+                        'The Assumption of Mary into Heaven'),
+                    decades('Fifth', 'Glorious',
+                        'The Coronation of Our Lady in Heaven.'),
+                    hailholyqueen(),
+                    divider(),
+                    Text(
+                      'Pray for us, O holy Mother of God.That we may be made worthy of the promises of Christ',
+                      style: TextStyle(
+                        fontSize: 23,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w400,
+                        height: 0,
                       ),
-                      divider(),
-                      letusprayhhq(),
-                      divider(),
-                      Text(
-                        '(End with the Sign of the Cross)\n\nIn the name of the Father, and of the Son, and of the Holy Spirit. Amen.',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 23,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w400,
-                          height: 0,
-                        ),
+                    ),
+                    divider(),
+                    letusprayhhq(),
+                    divider(),
+                    Text(
+                      '(End with the Sign of the Cross)\n\nIn the name of the Father, and of the Son, and of the Holy Spirit. Amen.',
+                      style: TextStyle(
+                        fontSize: 23,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w400,
+                        height: 0,
                       ),
-                      divider(),
-                      Text(
-                        '(OR optionally continue with the litany)',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 23,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w600,
-                          height: 0,
-                        ),
-                      ),
-                      divider(),
-                      divider()
-                    ],
-                  ),
+                    ),
+                    divider(),
+                    litanyButton(),
+                    divider(),
+                    divider()
+                  ],
                 ),
               )
             ],

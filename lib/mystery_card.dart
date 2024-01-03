@@ -108,7 +108,6 @@ class MysteryBox extends StatelessWidget {
               Text(
                 "$title",
                 style: TextStyle(
-                  color: Colors.black,
                   fontSize: 21,
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w600,
@@ -118,7 +117,6 @@ class MysteryBox extends StatelessWidget {
               Text(
                 "($day)",
                 style: TextStyle(
-                  color: Colors.black,
                   fontSize: 15,
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w300,

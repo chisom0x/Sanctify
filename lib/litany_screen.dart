@@ -23,10 +23,8 @@ class Litany extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Expanded(
-                  child: Column(
-                    children: [LitanyWidget()],
-                  ),
+                child: Column(
+                  children: [litanyWidget()],
                 ),
               )
             ],
@@ -55,7 +53,7 @@ class prayerappbar extends StatelessWidget {
             icon: Icon(Icons.arrow_back_ios_new_outlined),
           ),
           Text(
-            'Joyful Mystery',
+            'Litany of our blessed virgn mary',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 20,

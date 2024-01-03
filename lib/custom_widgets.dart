@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:intl/date_symbol_data_file.dart';
+import 'package:rosary_app/main.dart';
 
 Widget appBar() {
   return Padding(
@@ -12,7 +13,16 @@ Widget appBar() {
       children: [
         Container(child: greeting()),
         Container(
-          child: Icon(Icons.dark_mode),
+          child: IconButton(
+              icon: Icon(MyApp.themeNotifier.value == ThemeMode.light
+                  ? Icons.light_mode
+                  : Icons.dark_mode),
+              onPressed: () {
+                MyApp.themeNotifier.value =
+                    MyApp.themeNotifier.value == ThemeMode.light
+                        ? ThemeMode.dark
+                        : ThemeMode.light;
+              }),
         )
       ],
     ),
@@ -104,7 +114,6 @@ Widget signofthecross() {
   return Text(
     'Sign of the cross - (In the name of the Father, and of the Son and of the holy Spirit. Amen',
     style: TextStyle(
-      color: Colors.black,
       fontSize: 23,
       fontFamily: 'Inter',
       fontWeight: FontWeight.w600,
@@ -117,7 +126,6 @@ Widget apostlecreedtitle() {
   return Text(
     'The Apostles Creed ',
     style: TextStyle(
-      color: Colors.black,
       fontSize: 23,
       fontFamily: 'Inter',
       fontWeight: FontWeight.w600,
@@ -132,7 +140,6 @@ Widget apostlescreed() {
     child: Text(
       'I believe in God, the Father almighty, creator of heaven and earth.\nI believe in Jesus Christ, his only Son, our Lord, who was conceived by the Holy Spirit and born of the virgin Mary. He suffered under Pontius Pilate, was crucified, died, and was buried; he descended to hell. The third day he rose again from the dead. He ascended to heaven and is seated at the right hand of God the Father almighty. From there he will come to judge the living and the dead.\nI believe in the Holy Spirit, the holy catholic* church, the communion of saints, the forgiveness of sins, the resurrection of the body, and the life everlasting. Amen.',
       style: TextStyle(
-        color: Colors.black,
         fontSize: 23,
         fontFamily: 'Inter',
         fontWeight: FontWeight.w400,
@@ -146,7 +153,6 @@ Widget lordsprayertitle() {
   return Text(
     "The Lord’s Prayer",
     style: TextStyle(
-      color: Colors.black,
       fontSize: 23,
       fontFamily: 'Inter',
       fontWeight: FontWeight.w600,
@@ -159,7 +165,6 @@ Widget lorsdprayer() {
   return Text(
     'Our Father in heaven, hallowed be your name, your kingdom come, your will be done, on earth as in heaven. Give us today our daily bread. Forgive us our sins as we forgive those who sin against us. Lead us not into temptation but deliver us from evil.',
     style: TextStyle(
-      color: Colors.black,
       fontSize: 23,
       fontFamily: 'Inter',
       fontWeight: FontWeight.w400,
@@ -172,7 +177,6 @@ Widget hailmary(times) {
   return Text(
     'Hail Mary, Full of Grace, The Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus.Holy Mary, Mother of God, pray for us sinners now, and at the hour of death. (say this $times times)',
     style: TextStyle(
-      color: Colors.black,
       fontSize: 23,
       fontFamily: 'Inter',
       fontWeight: FontWeight.w400,
@@ -185,7 +189,6 @@ Widget glorybe() {
   return Text(
     'Glory be to the Father, and to the Son, and to the Holy Spirit, as it was in the beginning, is now, and ever shall be, world without end.',
     style: TextStyle(
-      color: Colors.black,
       fontSize: 23,
       fontFamily: 'Inter',
       fontWeight: FontWeight.w400,
@@ -220,7 +223,6 @@ Widget decades(decade, mystery, title) {
       Text(
         'The $decade $mystery Mystery - $title',
         style: TextStyle(
-          color: Colors.black,
           fontSize: 20,
           fontFamily: 'Inter',
           fontWeight: FontWeight.w700,
@@ -242,7 +244,6 @@ Widget ohgoodjesus() {
   return Text(
     'O my Jesus, forgive us our sins, save us from the fires of hell; lead all souls to Heaven, especially those who have most need of your mercy.',
     style: TextStyle(
-      color: Colors.black,
       fontSize: 23,
       fontFamily: 'Inter',
       fontWeight: FontWeight.w400,
@@ -255,7 +256,6 @@ Widget hailholyqueen() {
   return Text(
     'Hail, holy Queen, mother of mercy, our life, our sweetness, and our hope. To you we cry, poor banished children of Eve; to you we send up our sighs, mourning and weeping in this valley of tears.Turn, then, most gracious advocate, your eyes of mercy toward us; and after this, our exile, show unto us the blessed fruit of your womb, Jesus. O clement, O loving, O sweet Virgin Mary.',
     style: TextStyle(
-      color: Colors.black,
       fontSize: 23,
       fontFamily: 'Inter',
       fontWeight: FontWeight.w400,
@@ -268,7 +268,6 @@ Widget letusprayhhq() {
   return Text(
     'O God, whose Only Begotten Son, by His Life, Death, and Resurrection, has purchased for us the rewards of eternal life, grant, we beseech thee, that while meditating on these mysteries of the most holy Rosary of the Blessed Virgin Mary, we may imitate what they contain and obtain what they promise, through the same Christ our Lord. Amen.',
     style: TextStyle(
-      color: Colors.black,
       fontSize: 23,
       fontFamily: 'Inter',
       fontWeight: FontWeight.w400,
@@ -277,13 +276,8 @@ Widget letusprayhhq() {
   );
 }
 
-class LitanyWidget extends StatelessWidget {
-  final String litanyText = '''
-God, the Father of heaven, have mercy on us.
-God the Son, Redeemer of the world, have mercy on us.
-God the Holy Spirit, have mercy on us.
-Holy Trinity, one God, have mercy on us.
-
+String litprayer() {
+  return '''
 Holy Mary, pray for us.
 Holy Mother of God, pray for us.
 Holy Virgin of virgins, pray for us.
@@ -344,24 +338,18 @@ Lamb of God, who takest away the sins of the world, have mercy on us.
 
 Pray for us, O holy Mother of God. That we may be made worthy of the promises of Christ.
 
-Let us pray. Grant, we beseech thee, O Lord God, that we, your servants, may enjoy perpetual health of mind and body; and by the intercession of the Blessed Mary, ever Virgin, may be delivered from present sorrow, and obtain eternal joy. Through Christ our Lord. Amen.
+Let us pray. Grant, we beseech thee, O Lord God, that we, your servants, may enjoy perpetual health of mind and body; and by the intercession of the Blessed Mary, ever Virgin, may be delivered from present sorrow, and obtain eternal joy. Through Christ our Lord. Amen
 ''';
+}
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Litany of the Virgin Mary'),
-      ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Text(
-            litanyText,
-            style: TextStyle(fontSize: 16),
-          ),
-        ),
-      ),
-    );
-  }
+Widget litanyWidget() {
+  return Text(
+    '${litprayer()}',
+    style: TextStyle(
+      fontSize: 23,
+      fontFamily: 'Inter',
+      fontWeight: FontWeight.w400,
+      height: 0,
+    ),
+  );
 }

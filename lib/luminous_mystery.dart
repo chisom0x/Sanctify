@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:rosary_app/custom_widgets.dart';
+import 'package:rosary_app/joyful_mystery.dart';
 
 class Luminous extends StatelessWidget {
   @override
@@ -21,59 +22,46 @@ class Luminous extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Expanded(
-                  child: Column(
-                    children: [
-                      startrosary(),
-                      divider(),
-                      decades(
-                          'First', 'Luminous', "Jesus' Baptism in the Jordan."),
-                      decades('Second', 'Luminous', 'The Wedding at Cana.'),
-                      decades('Third', 'Luminous',
-                          'The Proclamation of the Kingdom.'),
-                      decades('Fourth', 'Luminous', 'The Transfiguration.'),
-                      decades('Fifth', 'Luminous',
-                          'The Institution of the Eucharist'),
-                      hailholyqueen(),
-                      divider(),
-                      Text(
-                        'Pray for us, O holy Mother of God.That we may be made worthy of the promises of Christ',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 23,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w400,
-                          height: 0,
-                        ),
+                child: Column(
+                  children: [
+                    startrosary(),
+                    divider(),
+                    decades(
+                        'First', 'Luminous', "Jesus' Baptism in the Jordan."),
+                    decades('Second', 'Luminous', 'The Wedding at Cana.'),
+                    decades('Third', 'Luminous',
+                        'The Proclamation of the Kingdom.'),
+                    decades('Fourth', 'Luminous', 'The Transfiguration.'),
+                    decades('Fifth', 'Luminous',
+                        'The Institution of the Eucharist'),
+                    hailholyqueen(),
+                    divider(),
+                    Text(
+                      'Pray for us, O holy Mother of God.That we may be made worthy of the promises of Christ',
+                      style: TextStyle(
+                        fontSize: 23,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w400,
+                        height: 0,
                       ),
-                      divider(),
-                      letusprayhhq(),
-                      divider(),
-                      Text(
-                        '(End with the Sign of the Cross)\n\nIn the name of the Father, and of the Son, and of the Holy Spirit. Amen.',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 23,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w400,
-                          height: 0,
-                        ),
+                    ),
+                    divider(),
+                    letusprayhhq(),
+                    divider(),
+                    Text(
+                      '(End with the Sign of the Cross)\n\nIn the name of the Father, and of the Son, and of the Holy Spirit. Amen.',
+                      style: TextStyle(
+                        fontSize: 23,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w400,
+                        height: 0,
                       ),
-                      divider(),
-                      Text(
-                        '(OR optionally continue with the litany)',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 23,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w600,
-                          height: 0,
-                        ),
-                      ),
-                      divider(),
-                      divider()
-                    ],
-                  ),
+                    ),
+                    divider(),
+                    litanyButton(),
+                    divider(),
+                    divider()
+                  ],
                 ),
               )
             ],

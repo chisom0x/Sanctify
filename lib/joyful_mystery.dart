@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:rosary_app/custom_widgets.dart';
+import 'package:rosary_app/litany_screen.dart';
 
 class Joyful extends StatelessWidget {
   const Joyful({Key? key}) : super(key: key);
@@ -43,7 +44,6 @@ class Joyful extends StatelessWidget {
                       Text(
                         'Pray for us, O holy Mother of God.That we may be made worthy of the promises of Christ',
                         style: TextStyle(
-                          color: Colors.black,
                           fontSize: 23,
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w400,
@@ -56,7 +56,6 @@ class Joyful extends StatelessWidget {
                       Text(
                         '(End with the Sign of the Cross)\n\nIn the name of the Father, and of the Son, and of the Holy Spirit. Amen.',
                         style: TextStyle(
-                          color: Colors.black,
                           fontSize: 23,
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w400,
@@ -64,16 +63,7 @@ class Joyful extends StatelessWidget {
                         ),
                       ),
                       divider(),
-                      Text(
-                        '(OR optionally continue with the litany)',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 23,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w600,
-                          height: 0,
-                        ),
-                      ),
+                      litanyButton(),
                       divider(),
                       divider()
                     ],
@@ -85,6 +75,51 @@ class Joyful extends StatelessWidget {
         ),
       );
     });
+  }
+}
+
+class litanyButton extends StatelessWidget {
+  const litanyButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Litany()),
+          );
+        },
+        child: Container(
+          width: double.infinity,
+          height: 64,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.deepPurpleAccent, // Set the border color
+              width: 2.0, // Set the border width
+            ),
+            borderRadius: BorderRadius.circular(10.0), // Set the border radius
+          ),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: Text(
+              '(Optionally) continue with the litany',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 18,
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w600,
+                height: 0,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
 
