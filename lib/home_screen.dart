@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:intl/date_symbol_data_file.dart';
 import 'package:rosary_app/custom_widgets.dart';
+import 'package:rosary_app/litany_screen.dart';
 
 import 'dart:io';
 
@@ -60,11 +61,11 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 prayer(title: 'Litany of our blessed virgin mary'),
                 divider(),
-                prayer(title: 'Prayer to saint Joseph'),
-                divider(),
-                prayer(title: 'Prayer to saint Micheal the arch angel'),
-                divider(),
-                prayer(title: 'Prayer for purity')
+                // prayer(title: 'Prayer to saint Joseph'),
+                // divider(),
+                // prayer(title: 'Prayer to saint Micheal the arch angel'),
+                // divider(),
+                // prayer(title: 'Prayer for purity')
               ],
             ),
           )
@@ -81,14 +82,22 @@ class prayer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      "$title",
-      style: TextStyle(
-        color: Colors.black,
-        fontSize: 20,
-        fontFamily: 'Inter',
-        fontWeight: FontWeight.w400,
-        height: 0,
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Litany()),
+        );
+      },
+      child: Text(
+        "$title",
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 20,
+          fontFamily: 'Inter',
+          fontWeight: FontWeight.w400,
+          height: 0,
+        ),
       ),
     );
   }
