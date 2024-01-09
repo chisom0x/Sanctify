@@ -1,16 +1,26 @@
-# rosary_app
+# Sanctify
 
-A new Flutter project.
+## Description
+Sanctify is a simple application built with Flutter to teach Catholics how to pray the rosary.
+(Not available on Play Store or apple app store yet)
 
-## Getting Started
+### Installing Sanctify
+To install Sanctify, follow these steps:
 
-This project is a starting point for a Flutter application.
+-  Clone the repo
 
-A few resources to get you started if this is your first Flutter project:
+  
+## Contributing to Sanctify
+To contribute to Sanctify, follow these steps:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. Fork this repository.
+2. Create a branch
+3. Make your changes and commit them
+4. Push to the original branch
+5. Create the pull request.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Contact
+If you want to contact me you can reach me at `onyenankiekelvin@gmail.com`.
+
+
+
